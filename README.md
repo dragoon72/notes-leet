@@ -3,3 +3,5 @@
 This repository contains my Data Structures & Algorithms notes and LeetCode solutions.
 
 ## 📂 Topics Covered
+1. TWO POINTER
+2. 
