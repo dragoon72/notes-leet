@@ -1,2 +1,5 @@
-# this is my notes for dsa
-1. TWO POINTERS
+# 📘 DSA Notes & LeetCode Practice
+
+This repository contains my Data Structures & Algorithms notes and LeetCode solutions.
+
+## 📂 Topics Covered
