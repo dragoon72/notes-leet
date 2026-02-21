@@ -36,3 +36,29 @@ so here we ccan see its a sorted array and we need to return an array of the sqa
 
 # 26. [Remove duplicates](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/?envType=problem-list-v2&envId=two-pointers)
 
+Given a sorted array nums, remove the duplicates in-place such that each element appears only once. Return the new length of the array.
+You must:  
+
+Modify the input array in place
+
+Use O(1) extra space
+
+Return the length of the unique portion
+
+##### example
+
+Input:  nums = [1, 1, 2]
+
+Output: 2,
+
+nums = [1, 2, ...]
+
+### Idea (Two Pointers)
+
+Because the array is already sorted: All duplicates are adjacent. We can keep two pointers:
+
+i – slow pointer for unique position
+
+j – fast pointer scanning ahead
+
+When nums[j] != nums[i], we found a new unique value!
