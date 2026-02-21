@@ -32,4 +32,7 @@ it untill left is still less than right
 
 # 977. [Squares of a sorted array](https://leetcode.com/problems/squares-of-a-sorted-array/description/?envType=problem-list-v2&envId=two-pointers)
 
-so here we ccan see its a sorted array and we need to return an array of the sqaure of the elements of the given array. so my first thought was okay this is $O(n^2)$ ,okay so its two pointers . but then i realised it 
+so here we ccan see its a sorted array and we need to return an array of the sqaure of the elements of the given array. so my first thought was okay this is $O(n^2)$ ,okay so its two pointers . now what we can do is...one pointer at the start other at the other end and then while traversing the whole array we can check if the absolute value of the start pointer is greater than the pointer at the end and then we can update the square in another array
+
+# 26. [Remove duplicates](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/?envType=problem-list-v2&envId=two-pointers)
+
