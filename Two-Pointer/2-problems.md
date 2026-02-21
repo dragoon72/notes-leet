@@ -29,3 +29,7 @@ be the case for two pointers and also there are two numbers ffor which we are op
 okay so now this is an example where we will emply the pointers in front and at the end. so since the array is sorted index 1 and the last will bear some 
 int value, check if its greater than the target and if it is then reduce the pointer index and if its lesser then increase the left pointer index keep doimg 
 it untill left is still less than right
+
+# 977. [Squares of a sorted array](https://leetcode.com/problems/squares-of-a-sorted-array/description/?envType=problem-list-v2&envId=two-pointers)
+
+so here we ccan see its a sorted array and we need to return an array of the sqaure of the elements of the given array. so my first thought was okay this is $O(n^2)$ ,okay so its two pointers . but then i realised it 
