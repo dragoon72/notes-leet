@@ -21,6 +21,21 @@ Copy 12 → [1, 3, 12, _, _]
 
 Fill zeros → [1, 3, 12, 0, 0]
 
+    class Solution {
+    public:
+    void moveZeroes(vector<int>& nums) {
+        int slow=0;
+        for(int fast=0;fast<nums.size();fast++){
+            if(nums[fast]!=0){
+                nums[slow++]=nums[fast];
+            }
+        }
+        while(slow<nums.size()){
+            nums[slow++]=0;
+        }
+    }
+    };
+
 # 167.[Two Sum II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/)
 here we see that the input array is sorted. now we have to find the index for two numbers which is equal to the target. you think abt the brute
 force method first. alright, first step is clear ...now you have thought that the time complexity turns out to be O(n2). it should click your mind that this can
