@@ -71,14 +71,14 @@ then move on and check for the other 2k pair, if the string ends before getting 
 
 so our intution should be like this:
 <br>
-####Loop Increment:
+#### Loop Increment:
 We use i += 2 * k because the problem asks us to process the string in blocks of $2k$. We only care about the first half of each block.
 <br>
-####Reversal Range: reverse function takes two iterators: the beginning of the range and the end (exclusive).The start of our reversal is always s.begin() + i.The end of our reversal is s.begin() + i + k. However, if i + k exceeds the string length (when fewer than $k$ characters remain), we must use s.end() (which is s.begin() + n).
+#### Reversal Range: reverse function takes two iterators: the beginning of the range and the end (exclusive).The start of our reversal is always s.begin() + i.The end of our reversal is s.begin() + i + k. However, if i + k exceeds the string length (when fewer than $k$ characters remain), we must use s.end() (which is s.begin() + n).
 
-####Complexity:Time Complexity: $O(n)$, where $n$ is the length of the string. Each character is visited at most twice.
+#### Complexity:Time Complexity: $O(n)$, where $n$ is the length of the string. Each character is visited at most twice.
 
-####Space Complexity: $O(1)$ if we modify the input string in place
+#### Space Complexity: $O(1)$ if we modify the input string in place
 
 
     class Solution {
