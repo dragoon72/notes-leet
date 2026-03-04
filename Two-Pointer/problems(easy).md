@@ -73,6 +73,30 @@ it untill left is still less than right
 
 so here we ccan see its a sorted array and we need to return an array of the sqaure of the elements of the given array. so my first thought was okay this is $O(n^2)$ ,okay so its two pointers . now what we can do is...one pointer at the start other at the other end and then while traversing the whole array we can check if the absolute value of the start pointer is greater than the pointer at the end and then we can update the square in another array
 
+    class Solution {
+    public:
+    vector<int> sortedSquares(vector<int>& nums) {
+        int left=0;
+        int right=nums.size()-1;
+        while(left<=right){
+            if(abs(nums[left])>abs(nums[right])){
+                int temp=nums[right];
+                nums[right]=nums[left]*nums[left];
+                nums[left]=temp;
+               
+                right--;
+            }
+        
+             else{ 
+                nums[right]=nums[right]*nums[right];
+                 left++;
+            }
+        }
+        return nums;
+    
+    }
+    };
+
 # 26. [Remove duplicates](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/?envType=problem-list-v2&envId=two-pointers)
 
 Given a sorted array nums, remove the duplicates in-place such that each element appears only once. Return the new length of the array.
@@ -101,6 +125,20 @@ i – slow pointer for unique position
 j – fast pointer scanning ahead
 
 When nums[j] != nums[i], we found a new unique value!
+
+    class Solution {
+    public:
+    int removeDuplicates(vector<int>& nums) {
+        int k=0;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]!=nums[k]){
+                k++;
+                nums[k]=nums[i];
+            }
+        }
+        return k+1;
+    }
+    };
 
 
 # 541.[Reverse String II](https://leetcode.com/problems/reverse-string-ii/description/?envType=problem-list-v2&envId=w7qep7rj)
