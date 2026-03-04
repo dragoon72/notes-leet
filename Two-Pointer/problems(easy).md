@@ -45,6 +45,30 @@ okay so now this is an example where we will emply the pointers in front and at 
 int value, check if its greater than the target and if it is then reduce the pointer index and if its lesser then increase the left pointer index keep doimg 
 it untill left is still less than right
 
+
+    class Solution {
+    public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int left = 0;
+        int right = nums.size() - 1;
+
+        while(left < right) {
+            int sum = nums[left] + nums[right];
+
+            if(sum == target)
+                return {left + 1, right + 1};  
+
+            else if(sum > target)
+                right--;
+            else
+                left++;
+        }
+
+        return {};
+    }
+    };
+
+
 # 977. [Squares of a sorted array](https://leetcode.com/problems/squares-of-a-sorted-array/description/?envType=problem-list-v2&envId=two-pointers)
 
 so here we ccan see its a sorted array and we need to return an array of the sqaure of the elements of the given array. so my first thought was okay this is $O(n^2)$ ,okay so its two pointers . now what we can do is...one pointer at the start other at the other end and then while traversing the whole array we can check if the absolute value of the start pointer is greater than the pointer at the end and then we can update the square in another array
