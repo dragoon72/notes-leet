@@ -62,3 +62,33 @@ i – slow pointer for unique position
 j – fast pointer scanning ahead
 
 When nums[j] != nums[i], we found a new unique value!
+
+
+# 541.[Reverse String II](https://leetcode.com/problems/reverse-string-ii/description/?envType=problem-list-v2&envId=w7qep7rj)
+
+So here the question asks ask us to take the 2k parts of the string and then we need to reverse the first k part and leave the other part as it is.
+then move on and check for the other 2k pair, if the string ends before getting a 2k pair we reverse the whole left out string.
+
+so our intution should be like this:
+<br>
+####Loop Increment:
+We use i += 2 * k because the problem asks us to process the string in blocks of $2k$. We only care about the first half of each block.
+<br>
+####Reversal Range: reverse function takes two iterators: the beginning of the range and the end (exclusive).The start of our reversal is always s.begin() + i.The end of our reversal is s.begin() + i + k. However, if i + k exceeds the string length (when fewer than $k$ characters remain), we must use s.end() (which is s.begin() + n).
+
+####Complexity:Time Complexity: $O(n)$, where $n$ is the length of the string. Each character is visited at most twice.
+
+####Space Complexity: $O(1)$ if we modify the input string in place
+
+
+    class Solution {
+    public:
+    string reverseStr(string s, int k) {
+        int n=s.length();
+
+        for(int i=0;i<n;i+=2*k){
+            reverse(s.begin()+i,s.begin()+min(i+k,n));
+        }
+        return s;
+    }
+    };
