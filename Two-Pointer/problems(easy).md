@@ -20,7 +20,7 @@ Copy 3 → [1, 3, _, _, _]
 Copy 12 → [1, 3, 12, _, _]
 
 Fill zeros → [1, 3, 12, 0, 0]
-
+## code:
     class Solution {
     public:
     void moveZeroes(vector<int>& nums) {
@@ -45,7 +45,7 @@ okay so now this is an example where we will emply the pointers in front and at 
 int value, check if its greater than the target and if it is then reduce the pointer index and if its lesser then increase the left pointer index keep doimg 
 it untill left is still less than right
 
-
+## code:
     class Solution {
     public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -72,7 +72,7 @@ it untill left is still less than right
 # 977. [Squares of a sorted array](https://leetcode.com/problems/squares-of-a-sorted-array/description/?envType=problem-list-v2&envId=two-pointers)
 
 so here we ccan see its a sorted array and we need to return an array of the sqaure of the elements of the given array. so my first thought was okay this is $O(n^2)$ ,okay so its two pointers . now what we can do is...one pointer at the start other at the other end and then while traversing the whole array we can check if the absolute value of the start pointer is greater than the pointer at the end and then we can update the square in another array
-
+## code:
     class Solution {
     public:
     vector<int> sortedSquares(vector<int>& nums) {
@@ -125,7 +125,7 @@ i – slow pointer for unique position
 j – fast pointer scanning ahead
 
 When nums[j] != nums[i], we found a new unique value!
-
+## code:
     class Solution {
     public:
     int removeDuplicates(vector<int>& nums) {
@@ -157,7 +157,7 @@ We use i += 2 * k because the problem asks us to process the string in blocks of
 
 #### Space Complexity: $O(1)$ if we modify the input string in place
 
-
+## code:
     class Solution {
     public:
     string reverseStr(string s, int k) {
@@ -167,5 +167,43 @@ We use i += 2 * k because the problem asks us to process the string in blocks of
             reverse(s.begin()+i,s.begin()+min(i+k,n));
         }
         return s;
+    }
+    };
+
+# 349.[Intersection of two arrays](https://leetcode.com/problems/intersection-of-two-arrays/description/?envType=problem-list-v2&envId=w7qep7rj)
+
+so, in this question we are supposed to find the intersection of two functions(arrays) and return them with a new array. space complexity O(n).
+
+### Intution:
+since there are two arrays what we can do is think of two pointers . we have to think of iterating through the two arrays with two pointers and check for unique numbers. so what we will do is, we know that two pointer works on sorted array, so we sort both the arrays and then iterate and then if our new array is empty or the last element is not the current element in array 1 then we push this element to the back of new array.
+
+## code:
+    
+    class Solution {
+    public:
+    vector<int> intersection(std::vector<int>& nums1, std::vector<int>& nums2) {
+    sort(nums1.begin(), nums1.end());
+    sort(nums2.begin(), nums2.end());
+
+        vector<int> result;
+        int i = 0, j = 0;
+
+       
+        while (i < nums1.size() && j < nums2.size()) {
+            if (nums1[i] == nums2[j]) {
+           
+                if (result.empty() || result.back() != nums1[i]) {
+                    result.push_back(nums1[i]);
+                }
+                i++;
+                j++;
+            } else if (nums1[i] < nums2[j]) {
+                i++;
+            } else {
+            
+                j++;
+            }
+        }
+        return result;
     }
     };
