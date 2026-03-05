@@ -7,7 +7,7 @@ It helps reduce time complexity, often from O(n²) → O(n).
 
 ## Basic Idea:
 
-Instead of checking every possible pair using two loops Use two pointers
+Instead of checking every possible pair using two loops Use two pointers <br>
 -Move them based on conditions
 <br>
 -Stop when the goal is achieved
